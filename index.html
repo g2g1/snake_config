@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Snake Game</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <style>
+            canvas{
+                display: block;
+                margin: 0 auto;
+            }
+      
+
+     
+            #content{
+                display:inline-block;
+                width:708px;
+                height:608px;
+                position:relative;
+                left: 50%;
+                transform: translateX(-50%);
+                border:1px solid black;
+            }
+            .left_buttons{z-index: 3000;width:100px;height:30px;color:white;background-color: dodgerblue; border-radius:2px;cursor: pointer;overflow-x:hidden;}
+            #snake{
+                position:absolute;
+                right:0px;
+                top:0px;
+
+            }
+
+            #left_panel{
+                float:left;
+                width:100px;
+                height:608px;
+            }    
+            #dropdown_panel{
+                position: relative;
+                display: inline-block;
+
+                z-index:0;
+            }
+            #dropdown_content{
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            #dropdown_content .dropdown_each {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+            }
+            #dropdown_content .dropdown_each:hover {background-color: #f1f1f1}
+
+
+            #dropdown_panel:hover #dropdown_content{
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="content">
+            <div id="left_panel">
+                <button class="left_buttons" id="restart">Restart</button>
+                <div id="dropdown_panel">
+                <button class="left_buttons" id="speed">Speed: x<span id="speed_text"></span></button>
+                    <div id="dropdown_content">
+                        <span class="dropdown_each">0.25</span>
+                        <span class="dropdown_each">0.5</span>
+                        <span class="dropdown_each">0.75</span>
+                        <span class="dropdown_each">1</span>
+                        <span class="dropdown_each">1.25</span>
+                        <span class="dropdown_each">1.5</span>
+                        <span class="dropdown_each">1.75</span>
+                        <span class="dropdown_each">2</span>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div>
+                <canvas id="snake" width="608" height="608"></canvas>
+                <script src="snake.js"></script>
+            </div>
+
+        </div>
+    </body>
+</html>
